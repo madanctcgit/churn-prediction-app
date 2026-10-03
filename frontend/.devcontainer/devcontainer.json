@@ -1,9 +1,0 @@
-{
-  "forwardPorts": [8501],
-  "portsAttributes": {
-    "7860": {
-      "label": "Frontend API",
-      "onAutoForward": "public"
-    }
-  }
-}
