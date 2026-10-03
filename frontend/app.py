@@ -49,7 +49,7 @@ if st.button("Predict Sales"):
 
     try:
         # Call backend API
-        response = requests.post("http://127.0.0.1:7860/v1/predict", json=payload)
+        response = requests.post("https://super-duper-halibut-gxrj5xjxvjq625xj.github.dev/v1/predict", json=payload)
         if response.status_code == 200:
             result = response.json()
             st.success(f"Predicted Sales: {result['prediction']}")
