@@ -1,7 +1,1 @@
-FROM python:3.12-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-EXPOSE 5000
-CMD ["python", "app.py"]
+RlJPTSBweXRob246My4xMi1zbGltDQpXT1JLRElSIC9hcHANCkNPUFkgcmVxdWlyZW1lbnRzLnR4dCAuDQpSVU4gcGlwIGluc3RhbGwgLS1uby1jYWNoZS1kaXIgLXIgcmVxdWlyZW1lbnRzLnR4dA0KQ09QWSAuIC4NCkVYUE9TRSA1MDAwDQpDTUQgWyJweXRob24iLCAiYXBwLnB5Il0NCg0K
