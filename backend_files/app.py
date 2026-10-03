@@ -8,7 +8,7 @@ import os
 superkart_api = Flask("SuperKart")
 
 # Load serialized model
-model = joblib.load("backend_files/superkart_model.joblib")
+model = joblib.load("superkart_model.joblib")
 
 
 
