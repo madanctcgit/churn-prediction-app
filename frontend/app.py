@@ -58,3 +58,26 @@ if st.button("Predict Sales"):
     except Exception as e:
         st.error(f"Could not connect to backend: {e}")
 
+# --- Batch Prediction ---
+
+# Always show the button
+if st.button("Predict Batch Sales"):
+    if uploaded_file is not None:
+        df = pd.read_csv(uploaded_file)
+        st.write("Preview of uploaded data:", df.head())
+
+        records = df.to_dict(orient="records")
+        payload = {"features": records}
+        print(payload);
+        try:
+            response = requests.post("http://localhost:7860/v1/predictbatch", json=payload)
+            if response.status_code == 200:
+                result = response.json()
+                st.success("Batch Predictions:")
+                st.write(result["predictions"])
+            else:
+                st.error(f"Backend error: {response.text}")
+        except Exception as e:
+            st.error(f"Could not connect to backend: {e}")
+    else:
+        st.warning("Please upload a CSV file first.")
